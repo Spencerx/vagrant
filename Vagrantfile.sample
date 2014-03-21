@@ -42,18 +42,15 @@ Vagrant.configure "2" do |config|
 
     chef.add_recipe     "git"
 
-    # chef.add_recipe     "java::openjdk7"
-    # chef.add_recipe     "leiningen"
+    chef.add_recipe     "java"
+    chef.add_recipe     "leiningen"
 
     # chef.add_recipe     "postgresql::all_packages"
     # chef.add_recipe     "cassandra::datastax"
 
     # chef.json.merge!({
     #                    :apt => {
-    #                      :mirror => :ru
-    #                    },
-    #                    :postgresql => {
-    #                      :max_connections => 256
+    #                      :mirror => :uk
     #                    }
     #                  })
   end
