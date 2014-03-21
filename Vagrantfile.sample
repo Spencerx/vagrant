@@ -4,18 +4,17 @@ Vagrant::Config.run do |config|
   config.vm.box     = "saucy64"
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box"
 
-
-  # change default username if needed, according to your box's config.
-  # config.ssh.username = "travis"
+  # config.ssh.username = "vagrant"
   config.vm.forward_port 22, 2220
 
-  # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
-  # # of slow outgoing connections is large (in dozens or more).
-  config.vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
+  config.vm.provider "virtualbox" do |vm|
+    # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
+    # # of slow outgoing connections is large (in dozens or more).
+    vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
 
-  # see https://github.com/mitchellh/vagrant/issues/912
-  config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
-
+    # see https://github.com/mitchellh/vagrant/issues/912
+    vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
+  end
   config.vm.provision :shell do |sh|
     sh.inline = <<-EOF
       sudo apt-get install ruby1.9.1-dev
