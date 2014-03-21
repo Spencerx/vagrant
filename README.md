@@ -18,8 +18,9 @@ machine.
 
 ## Getting Started
 
-First [install VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-Then [install Vagrant](http://www.vagrantup.com/downloads.html).
+ * [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+ * [Install Vagrant](http://www.vagrantup.com/downloads.html)
+ * Install VirtualBox guest addition updater: `vagrant gem install vagrant-vbguest`
 
 Copy sample Vagrant file:
 
@@ -27,8 +28,6 @@ Copy sample Vagrant file:
 
 Clone [OpenSensors cookbooks](https://github.com/opensensorsio/cookbooks):
 
-    mkdir cookbooks
-    # or
     git clone git://github.com/opensensors/cookbooks.git cookbooks
 
 To allow provisioning with chef you need to uncomment the following line
