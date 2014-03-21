@@ -1,0 +1,25 @@
+*#
+#*
+~*
+*~
+*.rbc
+*.class
+*.gem
+# makes it possible to clone cookbooks from any fork. MK.
+cookbooks/*
+Vagrantfile
+.vagrant
+Gemfile.lock
+
+.yardoc/*
+doc/*
+tmp/*
+
+cookbooks
+cookbooks/*
+.rvmrc
+.ruby-version
+tmp/*
+
+.bundle/*
+bin/*
