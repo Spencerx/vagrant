@@ -6,6 +6,10 @@ Vagrant.configure "2" do |config|
 
   # config.ssh.username = "vagrant"
 
+  # requires installing a plugin with
+  # vagrant gem install vagrant-vbguest
+  config.vbguest.auto_update = true
+
   config.vm.provider "virtualbox" do |vm|
     # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
     # # of slow outgoing connections is large (in dozens or more).
