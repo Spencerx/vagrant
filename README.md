@@ -25,7 +25,7 @@ Copy sample Vagrant file:
 
     cp Vagrantfile.sample Vagrantfile
 
-Clone OSIO cookbooks:
+Clone [OpenSensors cookbooks](https://github.com/opensensorsio/cookbooks):
 
     mkdir cookbooks
     # or
