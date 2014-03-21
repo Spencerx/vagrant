@@ -1,14 +1,12 @@
 Vagrant::Config.run do |config|
 
   # See https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Boxes for more boxes.
-  config.vm.box     = "precise64_base"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box     = "saucy64"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box"
 
 
   # change default username if needed, according to your box's config.
   # config.ssh.username = "travis"
-  config.vm.forward_port 22, 2220
-
   config.vm.forward_port 22, 2220
 
   # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
@@ -25,8 +23,8 @@ Vagrant::Config.run do |config|
   end
 
   config.vm.provision :chef_solo do |chef|
-    # this assumes you have travis-ci/travis-cookbooks cloned at ./cookbooks
-    chef.cookbooks_path = ["cookbooks/ci_environment"]
+    # this assumes you have opensensors/cookbooks cloned at ./cookbooks
+    chef.cookbooks_path = ["cookbooks"]
     chef.log_level      = :debug
 
     # Highly recommended to keep apt packages metadata in sync and
@@ -37,65 +35,17 @@ Vagrant::Config.run do |config|
     # chef.add_recipe     "build-essential"
     # chef.add_recipe     "networking_basic"
 
-    # chef.add_recipe     "travis_build_environment"
     # chef.add_recipe     "git"
 
     # chef.add_recipe     "java::openjdk7"
     # chef.add_recipe     "leiningen"
 
-    # chef.add_recipe     "rabbitmq::with_management_plugin"
-
-    # chef.add_recipe     "rvm"
-    # chef.add_recipe     "rvm::multi"
-    # chef.add_recipe     "nodejs::multi"
-    # chef.add_recipe     "python::multi"
-
-    # chef.add_recipe     "libqt4"
-    # chef.add_recipe     "xserver"
-    # chef.add_recipe     "firefox"
-
-    # chef.add_recipe     "memcached"
-    # chef.add_recipe     "redis"
-    # chef.add_recipe     "riak"
-    # chef.add_recipe     "mongodb"
-    # chef.add_recipe     "mysql::client"
-    # chef.add_recipe     "mysql::server"
-    # chef.add_recipe     "postgresql::client"
     # chef.add_recipe     "postgresql::all_packages"
-    # chef.add_recipe     "couchdb::ppa"
-    # chef.add_recipe     "neo4j-server::tarball"
-    # chef.add_recipe     "firebird"
-
-    # chef.add_recipe     "elasticsearch"
     # chef.add_recipe     "cassandra::datastax"
-    # chef.add_recipe     "hbase::ppa"
-    # chef.add_recipe     "pypy::ppa"
-
 
     # chef.json.merge!({
     #                    :apt => {
     #                      :mirror => :ru
-    #                    },
-    #                    :rvm => {
-    #                      :rubies  => [
-    #                        { :name => "1.8.7" },
-    #                        { :name => "rbx-head", :arguments => "--branch 2.0.testing", :using => "1.8.7" },
-    #                        { :name => "jruby-d19", :arguments => "--19" },
-    #                        { :name => "ruby-head-s92b6597be67738490c0ab759303a0e81a421b89a" },
-    #                        { :name => "1.9.3" },
-    #                        { :name => "rbx-head-d19", :arguments => "--branch 2.0.testing --19", :using => "1.9.3" },
-    #                        { :name => "jruby" },
-    #                        { :name => "jruby-head" },
-    #                        { :name => "1.9.2" },
-    #                      ],
-    #                      :aliases => {
-    #                        "rbx"         => "rbx-head",
-    #                        "rbx-2.0"     => "rbx-head",
-    #                        "rbx-2.0.pre" => "rbx-head"
-    #                      }
-    #                    },
-    #                    :mysql => {
-    #                      :server_root_password => ""
     #                    },
     #                    :postgresql => {
     #                      :max_connections => 256
