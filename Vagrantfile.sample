@@ -18,6 +18,7 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :shell do |sh|
     sh.inline = <<-EOF
+      sudo apt-get install ruby1.9.1-dev
       gem install chef --no-ri --no-rdoc --no-user-install
     EOF
   end
