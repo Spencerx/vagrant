@@ -5,7 +5,6 @@ Vagrant.configure "2" do |config|
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box"
 
   # config.ssh.username = "vagrant"
-  config.vm.forward_port 22, 2220
 
   config.vm.provider "virtualbox" do |vm|
     # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
