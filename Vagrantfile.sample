@@ -11,8 +11,7 @@ Vagrant.configure "2" do |config|
   config.vbguest.auto_update = true
 
   config.vm.provider "virtualbox" do |vm|
-    # changing nictype partially helps with Vagrant issue #516, VirtualBox NAT interface chokes when
-    # # of slow outgoing connections is large (in dozens or more).
+    # changing nictype partially helps with Vagrant issue #516, when VirtualBox NAT interface chokes
     vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
 
     # see https://github.com/mitchellh/vagrant/issues/912
