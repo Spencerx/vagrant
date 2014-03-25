@@ -7,6 +7,7 @@
 *.gem
 # makes it possible to clone cookbooks from any fork. MK.
 cookbooks/*
+private_cookbooks/*
 Vagrantfile
 .vagrant
 Gemfile.lock
@@ -16,7 +17,6 @@ doc/*
 tmp/*
 
 cookbooks
-cookbooks/*
 .rvmrc
 .ruby-version
 tmp/*
