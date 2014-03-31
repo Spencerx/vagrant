@@ -12,6 +12,7 @@ private_cookbooks
 private_cookbooks/*
 private-cookbooks
 private-cookbooks/*
+data_bags/ssh_keys/*
 Vagrantfile
 .vagrant
 Gemfile.lock
