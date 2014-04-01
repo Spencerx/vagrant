@@ -47,6 +47,10 @@ Vagrant.configure "2" do |config|
     chef.add_recipe     "java"
     chef.add_recipe     "leiningen"
 
+    chef.add_recipe     "azondi"
+    # chef.add_recipe     "leweb"
+    chef.add_recipe     "jig"
+
     chef.add_recipe     "cassandra::datastax"
     chef.add_recipe     "postgresql::client"
     chef.add_recipe     "postgresql::server"
