@@ -26,9 +26,9 @@ Copy sample Vagrant file:
 
     cp Vagrantfile.sample Vagrantfile
 
-Clone [OpenSensors cookbooks](https://github.com/opensensorsio/cookbooks):
+Clone [OpenSensors cookbooks](https://github.com/opensensorsIO/cookbooks):
 
-    git clone git://github.com/opensensors/cookbooks.git cookbooks
+    git clone git://github.com/opensensorsIO/cookbooks.git cookbooks
 
 To allow provisioning with chef you need to uncomment the following line
 (including its associated end statement)
