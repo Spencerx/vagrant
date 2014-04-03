@@ -78,7 +78,7 @@ Vagrant.configure "2" do |config|
           broadcast_address: "127.0.0.1",
           rpc_address: "127.0.0.1",
           seeds: ["127.0.0.1"],
-          :max_heap_size => "128m"
+          :max_heap_size => "256m"
         },
         postgresql: {
           password: {
