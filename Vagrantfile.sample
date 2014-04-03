@@ -12,7 +12,7 @@ Vagrant.configure "2" do |config|
 
   config.vm.provider "virtualbox" do |vm|
     # changing nictype partially helps with Vagrant issue #516, when VirtualBox NAT interface chokes
-    vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "1536", "--cpus", "2", "--ioapic", "on"]
+    vm.customize ["modifyvm", :id, "--nictype1", "Am79C973", "--memory", "3072", "--cpus", "2", "--ioapic", "on"]
 
     # see https://github.com/mitchellh/vagrant/issues/912
     vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
@@ -52,6 +52,7 @@ Vagrant.configure "2" do |config|
     # List the recipies you are going to work on/need.
     chef.add_recipe     "build-essential"
     chef.add_recipe     "networking_basic"
+    chef.add_recipe     "sysctl"
 
     chef.add_recipe     "git"
     chef.add_recipe     "emacs"
